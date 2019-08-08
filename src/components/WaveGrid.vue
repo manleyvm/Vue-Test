@@ -29,6 +29,7 @@
 </template>
 
 <script>
+
   export default {
 
     methods: {
@@ -50,7 +51,7 @@
         }
     },
 
-    data () {
+    data : function() {
       return {
 
         waveTemplates:[{value:100,text:'All Stores',ruleTemplates:[{value:5555,text:'Produce'},{value:6666,text:'Ambient'}]}]
@@ -65,7 +66,7 @@
         
 
         ]
-      }
+      };
     }
   }
 </script>

@@ -43,39 +43,10 @@
           justify-center
         >
           <v-flex text-center>
-
-              <WaveGrid />
-
-              <!-- <WaveGrid /> -->
-            <!-- <v-tooltip left>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  :href="source"
-                  icon
-                  large
-                  target="_blank"
-                  v-on="on"
-                >
-                  <v-icon large>mdi-code-tags</v-icon>
-                </v-btn>
-              </template>
-              <span>Source</span>
-            </v-tooltip>
-
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  icon
-                  large
-                  href="https://codepen.io/johnjleider/pen/zgxeLQ"
-                  target="_blank"
-                  v-on="on"
-                >
-                  <v-icon large>mdi-codepen</v-icon>
-                </v-btn>
-              </template>
-              <span>Codepen</span>
-            </v-tooltip> -->
+            <WaveGrid></WaveGrid>
+            <!-- <Chart :chartData="somedata"></Chart> -->
+            <RandomChart></RandomChart>
+            {{ somedata }}
           </v-flex>
         </v-layout>
       </v-container>
@@ -90,17 +61,30 @@
 </template>
 
 <script>
-import WaveGrid from './components/WaveGrid.vue'
+import WaveGrid from './components/WaveGrid'
+// import Chart from './components/Chart'
+import RandomChart from './components/RandomChart'
   export default {
-
-      components:{ WaveGrid }
-      ,
+    components:{WaveGrid,RandomChart},
     props: {
       source: String,
     },
 
     data: () => ({
-      drawer: null,
+      drawer: null, somedata:{
+      labels: ['January', 'February'],
+      datasets: [
+        {
+          label: 'Data One',
+          backgroundColor: '#f87979',
+          data: [40, 20]
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false
+    }
     }),
   }
 </script>
