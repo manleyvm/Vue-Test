@@ -2,6 +2,7 @@
   <v-app id="inspire">
     <v-navigation-drawer
       v-model="drawer"
+      dark
       app
     >
       <v-list dense>
@@ -45,8 +46,8 @@
           <v-flex text-center>
             <WaveGrid></WaveGrid>
             <!-- <Chart :chartData="somedata"></Chart> -->
-            <RandomChart></RandomChart>
-            {{ somedata }}
+            <!-- <RandomChart></RandomChart> -->
+            <!-- {{ somedata }} -->
           </v-flex>
         </v-layout>
       </v-container>
@@ -63,9 +64,11 @@
 <script>
 import WaveGrid from './components/WaveGrid'
 // import Chart from './components/Chart'
-import RandomChart from './components/RandomChart'
+// import RandomChart from './components/RandomChart'
   export default {
-    components:{WaveGrid,RandomChart},
+    components:{WaveGrid
+    // ,RandomChart
+    },
     props: {
       source: String,
     },
