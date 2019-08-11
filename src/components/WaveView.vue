@@ -2,7 +2,7 @@
     <v-container>
         <h2>Wave</h2>
 
-        <v-select :items="shifts" item-value="id" item-text="startTime" label="Shift"></v-select>
+        <v-select :items="shifts" item-value="id" item-text="startTime" label="Shift" clearable></v-select>
         <v-switch label="Hold Waving" color="red" v-model="settings.held"></v-switch>
         <wave-grid :items="waves"></wave-grid>
     </v-container>

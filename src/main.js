@@ -15,8 +15,8 @@ import RosterView from './components/RosterView.vue'
 const wms = {
        shifts:[{id:1,startTime:'2019-08-09T23:00:00'}]
       // ,shift:null
-      // ,held:false
-      ,settings:{wave:{shift:null,held:false}}
+      // ,held:false,statuses:[{value:0,text:'Ready'},{value:95,text:'Held'},{value:99,text:'Cancelled'}]
+      ,settings:{wave:{shift:null,held:false},roster:{statuses:[{value:0,text:'Ready'},{value:95,text:'Held'},{value:99,text:'Cancelled'}]}}
       ,waves:[
            {id:1121,volume:{pickables:6789,fpp:13,isActual:true},text:'Wave Grp 1',stores:10,stageBy:{min:'2019-08-09T23:00:00',max:'2008-09-02T06:00:00'},status:{value:90,text:'Waved'}     ,waveNbr:'20190101001',waveBy:'2008-09-02T06:00:00'}
           ,{id:4322,volume:{pickables:6789,fpp:13,isActual:true},text:'Wave Grp 2',stores:10,stageBy:{min:'2019-08-10T11:00:00',max:'2008-09-02T12:15:00'},status:{value:90,text:'Waved'}     ,waveNbr:'20190101003',waveBy:'2008-09-02T06:00:00'}
@@ -29,11 +29,11 @@ const wms = {
           
           
           ],rosters: [
-            {id:1, store:'1111',waveBy:'2008-09-02T15:53:00',ruleTemplates:[],status:0,waveTemplateId:null,ruleTemplateId:null}
-        ,   {id:2, store:'2222',waveBy:'2008-09-15T12:53:00',ruleTemplates:[],status:0,waveTemplateId:null,ruleTemplateId:null}
-        ,   {id:3, store:'3333',waveBy:'2008-09-15T13:53:00',ruleTemplates:[],status:0,waveTemplateId:null,ruleTemplateId:null}
-        ,   {id:4, store:'4444',waveBy:'2008-09-15T17:53:00',ruleTemplates:[],status:0,waveTemplateId:null,ruleTemplateId:null}
-        ,   {id:5, store:'5555',waveBy:'2008-09-15T08:53:00',ruleTemplates:[],status:0,waveTemplateId:null,ruleTemplateId:null}
+            {id:1, store:'1111',waveBy:'2008-09-02T15:53:00',ruleTemplates:[],status:0,waveTemplateId:null,ruleTemplateId:null,loadGrp:null,waveGrp:null,waveId:4646,inStoreDate:'2019-08-14T00:00:00'}
+        ,   {id:2, store:'2222',waveBy:'2008-09-15T12:53:00',ruleTemplates:[],status:0,waveTemplateId:null,ruleTemplateId:null,loadGrp:null,waveGrp:null,waveId:null,inStoreDate:'2019-08-14T00:00:00'}
+        ,   {id:3, store:'3333',waveBy:'2008-09-15T13:53:00',ruleTemplates:[],status:0,waveTemplateId:null,ruleTemplateId:null,loadGrp:null,waveGrp:null,waveId:7745,inStoreDate:'2019-08-15T00:00:00'}
+        ,   {id:4, store:'4444',waveBy:'2008-09-15T17:53:00',ruleTemplates:[],status:0,waveTemplateId:null,ruleTemplateId:null,loadGrp:null,waveGrp:null,waveId:null,inStoreDate:'2019-08-16T00:00:00'}
+        ,   {id:5, store:'5555',waveBy:'2008-09-15T08:53:00',ruleTemplates:[],status:0,waveTemplateId:null,ruleTemplateId:null,loadGrp:null,waveGrp:null,waveId:null,inStoreDate:'2019-08-16T00:00:00'}
         
 
         ]
@@ -46,7 +46,7 @@ Vue.use(VueMoment)
 Vue.use(VueRouter)
 const routes = [
   { path: '/wave', component: WaveView ,props: {waves: wms.waves, shifts:wms.shifts,settings: wms.settings.wave}},
-  { path: '/roster', component: RosterView,props: {rosters: wms.rosters} },
+  { path: '/roster', component: RosterView,props: {rosters: wms.rosters, shifts:wms.shifts,settings:wms.settings.roster} },
   { path: '/bar', component: ch }
 ]
 
