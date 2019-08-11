@@ -5,14 +5,18 @@
         <td class="text-left">{{ item.id }}</td>
         <td class="text-left">{{ item.text }}</td>
         <td class="text-left">{{ item.stores }}</td>
+        <td class="text-left">{{ item.volume.pickables }}<span v-if="!item.volume.isActual">*</span></td>
+        <td class="text-left">{{ item.volume.fpp }}<span v-if="!item.volume.isActual">*</span></td>
         <td class="text-left">{{ item.stageBy.min | moment("HH:mm") }} <span v-if="stageByMinDiff">{{ (stageByMinDiff > 0 ? '+' : '') + stageByMinDiff }}</span>
 
 
 
         </td>
         <td class="text-left">{{ item.stageBy.max | moment("HH:mm") }}</td>
+        <td class="text-left">{{ item.waveBy | moment("HH:mm")}} </td>
         <td class="text-left">{{ item.status.text }}</td>
         <td class="text-left">{{ item.waveNbr }}</td>
+        
         
       </tr>
 </template>

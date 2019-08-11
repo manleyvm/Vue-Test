@@ -14,7 +14,8 @@
     "vue": "^2.6.10",
     "vue-chartjs": "^3.4.2",
     "vue-moment": "^4.0.0",
-    "vuetify": "^2.0.0"
+    "vuetify": "^2.0.0",
+    "vuetify-datetime-picker": "^1.0.13"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.5.5",

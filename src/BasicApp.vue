@@ -44,6 +44,7 @@
           justify-center
         >
           <v-flex text-center>
+            <v-select :items="shifts" item-value="id" item-text="startTime"></v-select>
             <WaveGrid></WaveGrid>
             <!-- <Chart :chartData="somedata"></Chart> -->
             <!-- <RandomChart></RandomChart> -->
@@ -74,7 +75,12 @@ import WaveGrid from './components/WaveGrid'
     },
 
     data: () => ({
-      drawer: null, somedata:{
+      drawer: null
+      
+      
+      
+      ,shifts:[{id:1,startTime:'2019-08-09T23:00:00'}]
+      , somedata:{
       labels: ['January', 'February'],
       datasets: [
         {

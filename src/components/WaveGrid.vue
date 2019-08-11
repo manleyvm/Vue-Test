@@ -2,12 +2,23 @@
   <v-simple-table>
     <thead>
       <tr>
+        <th colspan="3">&nbsp;</th>
+        <th colspan="2" class="text-center">Volume</th>
+        <th colspan="2" class="text-center">Stage By</th>
+        <th colspan="3">&nbsp;</th>
+      </tr>
+      <tr>
         <th class="text-left">Id</th>
         <th class="text-left">Description</th>
         <th class="text-left">Stores</th>
-        <th class="text-center" colspan="2">Stage by Range</th>
+        <th class="text-left">Pickables</th>
+        <th class="text-left">FPP</th>
+        <th class="text-center">First</th>
+        <th class="text-center">Last</th>
+        <th class="text-left">Wave By</th>
         <th class="text-left">Status</th>
         <th class="text-left">Wave Number</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -56,14 +67,14 @@
     data : function() {
       return {
         waveGrps : [
-           {id:4321,text:'Wave Grp 1',stores:10,stageBy:{min:'2019-08-09T23:00:00',max:'2008-09-02T06:00:00'},status:{value:90,text:'Waved'},waveNbr:'20190101001'}
-          ,{id:4322,text:'Wave Grp 2',stores:10,stageBy:{min:'2019-08-10T11:00:00',max:'2008-09-02T12:15:00'},status:{value:90,text:'Waved'},waveNbr:'20190101001'}
-          ,{id:4323,text:'Wave Grp 3',stores:10,stageBy:{min:'2019-08-10T12:00:00',max:'2008-09-02T13:00:00'},status:{value:10,text:'Queued'},waveNbr:'20190101001'}
-          ,{id:4324,text:'Wave Grp 4',stores:10,stageBy:{min:'2019-08-10T14:00:00',max:'2008-09-02T17:45:00'},status:{value:5,text:'Held'},waveNbr:'20190101001'}
-          ,{id:4325,text:'Wave Grp 5',stores:10,stageBy:{min:'2019-08-10T18:00:00',max:'2008-09-02T20:00:00'},status:{value:10,text:'Queued'},waveNbr:'20190101001'}
-          ,{id:4326,text:'Wave Grp 6',stores:10,stageBy:{min:'2019-08-10T22:00:00',max:'2008-09-03T01:45:00'},status:{value:10,text:'Queued'},waveNbr:'20190101001'}
-          ,{id:4327,text:'Wave Grp 7',stores:10,stageBy:{min:'2019-08-11T01:00:00',max:'2008-09-03T04:00:00'},status:{value:99,text:'Cancelled'},waveNbr:'20190101001'}
-          ,{id:4328,text:'Wave Grp 8',stores:10,stageBy:{min:'2019-08-11T03:00:00',max:'2008-09-03T04:30:00'},status:{value:10,text:'Queued'},waveNbr:'20190101001'}
+           {id:4321,volume:{pickables:6789,fpp:13,isActual:true},text:'Wave Grp 1',stores:10,stageBy:{min:'2019-08-09T23:00:00',max:'2008-09-02T06:00:00'},status:{value:90,text:'Waved'}     ,waveNbr:'20190101001',waveBy:'2008-09-02T06:00:00'}
+          ,{id:4322,volume:{pickables:6789,fpp:13,isActual:true},text:'Wave Grp 2',stores:10,stageBy:{min:'2019-08-10T11:00:00',max:'2008-09-02T12:15:00'},status:{value:90,text:'Waved'}     ,waveNbr:'20190101003',waveBy:'2008-09-02T06:00:00'}
+          ,{id:4323,volume:{pickables:6789,fpp:13,isActual:false},text:'Wave Grp 3',stores:10,stageBy:{min:'2019-08-10T12:00:00',max:'2008-09-02T13:00:00'},status:{value:10,text:'Queued'}    ,waveNbr:null         ,waveBy:null}
+          ,{id:4324,volume:{pickables:6789,fpp:13,isActual:false},text:'Wave Grp 4',stores:10,stageBy:{min:'2019-08-10T14:00:00',max:'2008-09-02T17:45:00'},status:{value:5,text:'Held'}       ,waveNbr:null         ,waveBy:null}
+          ,{id:4325,volume:{pickables:6789,fpp:13,isActual:false},text:'Wave Grp 5',stores:10,stageBy:{min:'2019-08-10T18:00:00',max:'2008-09-02T20:00:00'},status:{value:10,text:'Queued'}    ,waveNbr:null         ,waveBy:null}
+          ,{id:4326,volume:{pickables:6789,fpp:13,isActual:false},text:'Wave Grp 6',stores:10,stageBy:{min:'2019-08-10T22:00:00',max:'2008-09-03T01:45:00'},status:{value:10,text:'Queued'}    ,waveNbr:null         ,waveBy:null}
+          ,{id:4327,volume:{pickables:6789,fpp:13,isActual:false},text:'Wave Grp 7',stores:10,stageBy:{min:'2019-08-11T01:00:00',max:'2008-09-03T04:00:00'},status:{value:99,text:'Cancelled'} ,waveNbr:null         ,waveBy:null}
+          ,{id:4328,volume:{pickables:6789,fpp:13,isActual:false},text:'Wave Grp 8',stores:10,stageBy:{min:'2019-08-11T03:00:00',max:'2008-09-03T04:30:00'},status:{value:10,text:'Queued'}    ,waveNbr:null         ,waveBy:null}
           
           
           ]
