@@ -44,8 +44,13 @@
           justify-center
         >
           <v-flex text-center>
-            <v-select :items="shifts" item-value="id" item-text="startTime"></v-select>
-            <WaveGrid></WaveGrid>
+                            <router-link to="/wave">Go to wave</router-link>
+                            <router-link to="/roster">Go to roster</router-link>
+                <router-link to="/bar">Go to Bar</router-link>
+            <router-view></router-view>
+            <!-- <v-select :items="shifts" item-value="id" item-text="startTime"></v-select> -->
+
+            
             <!-- <Chart :chartData="somedata"></Chart> -->
             <!-- <RandomChart></RandomChart> -->
             <!-- {{ somedata }} -->
@@ -63,13 +68,13 @@
 </template>
 
 <script>
-import WaveGrid from './components/WaveGrid'
+// import WaveGrid from './components/WaveGrid'
 // import Chart from './components/Chart'
 // import RandomChart from './components/RandomChart'
   export default {
-    components:{WaveGrid
+    // components:{WaveGrid
     // ,RandomChart
-    },
+    // },
     props: {
       source: String,
     },
@@ -80,6 +85,7 @@ import WaveGrid from './components/WaveGrid'
       
       
       ,shifts:[{id:1,startTime:'2019-08-09T23:00:00'}]
+      ,waves:[]
       , somedata:{
       labels: ['January', 'February'],
       datasets: [

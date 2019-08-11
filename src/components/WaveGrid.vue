@@ -1,4 +1,5 @@
 <template>
+
   <v-simple-table>
     <thead>
       <tr>
@@ -22,7 +23,7 @@
       </tr>
     </thead>
     <tbody>
-      <wave-grp-row v-for="item in waveGrps" v-bind:key="item.id" :item="item"></wave-grp-row>
+      <wave-grp-row v-for="item in items" v-bind:key="item.id" :item="item"></wave-grp-row>
 
       <!-- <tr v-for="item in rosters" :key="item.id">
         <td>{{ item.id }}</td>
@@ -45,27 +46,15 @@
   import WaveGrpRow from './WaveGrpRow'
   export default {
     components:{WaveGrpRow},
+    props:['items'],
     methods: {
         setRuleTemplates: function(item) {
-            // wt = this.$data.waveTemplates
-            // arr = wt.filter(function(a) { return a.value == item.waveTemplateId})[0].ruleTemplates;
-             //item.ruleTemplates = JSON.parse(JSON.stringify([{value:5555,text:'Produce'},{value:6666,text:'Ambient'}]));//this.waveTemplates.filter(a => { return a.value == item.waveTemplateId})[0].ruleTemplates;
              item.ruleTemplates = this.waveTemplates.filter( function(a) { return a.value == item.waveTemplateId})[0].ruleTemplates;
-
-            
-
-            // item.ruleTemplates = JSON.parse(JSON.stringify(this.waveTemplates.filter(a => { return a.value == item.waveTemplateId})[0].ruleTemplates));//;
-            // return null;
-            // item.ruleTemplates = [];
-            // for(var n; n<arr.length;n++){
-                // item.ruleTemplates.push({value:arr[n].value,text:arr[n].text});
-            // }
-
         }
     },
 
     data : function() {
-      return {
+      return {/*
         waveGrps : [
            {id:4321,volume:{pickables:6789,fpp:13,isActual:true},text:'Wave Grp 1',stores:10,stageBy:{min:'2019-08-09T23:00:00',max:'2008-09-02T06:00:00'},status:{value:90,text:'Waved'}     ,waveNbr:'20190101001',waveBy:'2008-09-02T06:00:00'}
           ,{id:4322,volume:{pickables:6789,fpp:13,isActual:true},text:'Wave Grp 2',stores:10,stageBy:{min:'2019-08-10T11:00:00',max:'2008-09-02T12:15:00'},status:{value:90,text:'Waved'}     ,waveNbr:'20190101003',waveBy:'2008-09-02T06:00:00'}
@@ -78,7 +67,7 @@
           
           
           ]
-        ,waveTemplates:[{value:100,text:'All Stores',ruleTemplates:[{value:5555,text:'Produce'},{value:6666,text:'Ambient'}]}]
+        ,*/waveTemplates:[{value:100,text:'All Stores',ruleTemplates:[{value:5555,text:'Produce'},{value:6666,text:'Ambient'}]}]
         ,ruleTemplates:{100:[{value:5555,text:'Produce'},{value:6666,text:'Ambient'}]}
         ,statuses:[{value:0,text:'Ready'},{value:95,text:'Held'},{value:99,text:'Cancelled'}]
         ,rosters: [

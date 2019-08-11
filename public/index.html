@@ -13,7 +13,72 @@
     <noscript>
       <strong>We're sorry but vue-test2 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
+
+    <v-app id="app">
+      <v-navigation-drawer
+        v-model="drawer"
+        dark
+        app
+      >
+        <v-list dense>
+          <v-list-item>
+            <v-list-item-action>
+              <v-icon>mdi-home</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Home</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-action>
+              <v-icon>mdi-mail</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Contact</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-navigation-drawer>
+  
+      <v-app-bar
+        app
+        color="indigo"
+        dark
+      >
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-toolbar-title>Application</v-toolbar-title>
+      </v-app-bar>
+  
+      <v-content>
+        <v-container
+          fluid
+          fill-height
+        >
+          <v-layout
+            align-center
+            justify-center
+          >
+            <v-flex text-center>
+                <router-link to="/foo">Go to Foo</router-link>
+                <router-link to="/bar">Go to Bar</router-link>
+              <!-- <router-view></router-view> -->
+              <!-- <v-select :items="shifts" item-value="id" item-text="startTime"></v-select> -->
+  
+              <!-- <WaveGrid></WaveGrid> -->
+              <!-- <Chart :chartData="somedata"></Chart> -->
+              <!-- <RandomChart></RandomChart> -->
+              <!-- {{ somedata }} -->
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-content>
+      <v-footer
+        color="indigo"
+        app
+      >
+        <span class="white--text">&copy; 2019</span>
+      </v-footer>
+    </v-app>
+
   </body>
 </html>
